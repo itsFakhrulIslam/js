@@ -40,4 +40,32 @@ let sums = 0;
 for (let i = 25; i < 75; i++) {
   sums += i;
 }
-console.log(sums);
+// console.log(sums);
+
+// ===========
+
+// even number
+for (let i = 0; i < 10; i++) {
+  if (i % 2 == 0) {
+    // console.log(i);
+  }
+}
+for (let i = 0; i < 10; i += 2) {
+  //   console.log(i);
+}
+for (let i = 0; i <= 10; i += 2) {
+  //   console.log(i);
+}
+
+// odd nubmer
+for (let i = 0; i < 15; i++) {
+  if (i % 2 == 1) {
+    // console.log(i);
+  }
+}
+for (let i = 1; i < 15; i += 2) {
+  //   console.log(i);
+}
+for (let i = 1; i <= 15; i += 2) {
+  //   console.log(i);
+}
