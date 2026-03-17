@@ -1,3 +1,5 @@
+//! array length check
+
 let numbers = [71, 72, 73, 74, 75, 76, 78, 79];
 // let sumN = numbers.length //total koto item
 // console.log(numbers);
