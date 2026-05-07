@@ -29,3 +29,57 @@ console.log('window🪟 file loaded...');
     <!-- tailwind css cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
  */
+
+const lessonLoadData = () => {
+  fetch('https://openapi.programming-hero.com/api/levels/all') //return promise of response
+    .then(response => response.json()) //return promise of json data
+    .then(data => {
+
+      //for result checking
+      console.log(data) //for fetched data by fetch()
+      console.log(data.status) //for status check
+      console.log(data.message) //for status message check
+      console.log(data.data) //for array of object check
+
+      //for result checking
+      displayLessons(data.data)
+    })
+}
+lessonLoadData()
+
+
+/**
+ * 1. get parent container to append card or data, then empty the container
+ * 2. get into every lessons
+ * 3. create element for every lessons
+ * 4. added info into fetch data
+ * 5. append/added the parent container
+ */
+
+const displayLessons = (lessons) => {
+  console.log(lessons);
+
+  //^1
+  const getLevelContainer = document.getElementById('levelContainer')
+  //console.log(getLevelContainer);
+  getLevelContainer.innerHTML = ''
+
+  //^2
+  lessons.forEach(lesson => {
+    //console.log(lesson);
+
+    //^3
+    const createDivElement = document.createElement('div')
+    //console.log(createDivElement);
+    
+    //^4
+    createDivElement.innerHTML = `
+    <button class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>Lessons - ${lesson.level_no}</button>
+    `
+    console.log(createDivElement);
+
+    //^5
+    getLevelContainer.appendChild(createDivElement)
+  });
+}
+//displayLessons()
