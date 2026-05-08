@@ -107,6 +107,24 @@ const displayLevelWord = (words) => {
   // console.log(getWordContainer);
   getWordContainer.innerHTML = ''
 
+  //^ special part
+  if (words.length == 0) {
+    getWordContainer.innerHTML = `
+        <div
+          class="col-span-full text-center rounded-xl py-10 space-y-5 fontBangla"
+        >
+          <img class="mx-auto" src="./assets/alert-error.png" alt="" />
+          <p class="font-medium text-gray-500">
+            এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি,
+          </p>
+          <h1 class="text-3xl font-bold">
+            নেক্সট Lesson এ যান...
+          </h1>
+        </div>
+    `
+    return
+  }
+
   words.forEach(word => {
     console.log(word);
 
@@ -114,10 +132,10 @@ const displayLevelWord = (words) => {
     // console.log(createWordCard);
     createWordCard.innerHTML = `
         <div class="bg-white rounded-xl text-center py-10 px-5">
-          <h2 class="text-2xl font-bold">${word.word}</h2>
+          <h2 class="text-2xl font-bold">${word.word ? word.word : 'Not Found'}</h2>
           <p class="font-semibold mt-2">Meaning /Pronounciation</p>
           <div class="fontBangla text-2xl text-gray-500 font-medium mt-5">
-            "${word.meaning} / ${word.pronunciation}"
+            "${word.meaning ? word.meaning : 'Not Found'} / ${word.pronunciation ? word.pronunciation : 'Not Found'}"
           </div>
 
           <div class="flex justify-between items-center">
