@@ -35,13 +35,13 @@ const lessonLoadData = () => {
     .then(response => response.json()) //return promise of json data
     .then(data => {
 
-      //for result checking
-      console.log(data) //for fetched data by fetch()
-      console.log(data.status) //for status check
-      console.log(data.message) //for status message check
-      console.log(data.data) //for array of object check
+      //*for result checking
+      // console.log(data) //* for fetched data by fetch()
+      // console.log(data.status) //* for status check
+      // console.log(data.message) //* for status message check
+      // console.log(data.data) //* for array of object check
 
-      //for result checking
+      //* for result checking
       displayLessons(data.data)
     })
 }
@@ -57,7 +57,7 @@ lessonLoadData()
  */
 
 const displayLessons = (lessons) => {
-  console.log(lessons);
+  // console.log(lessons);
 
   //^1
   const getLevelContainer = document.getElementById('levelContainer')
@@ -71,15 +71,65 @@ const displayLessons = (lessons) => {
     //^3
     const createDivElement = document.createElement('div')
     //console.log(createDivElement);
-    
+
     //^4
     createDivElement.innerHTML = `
-    <button class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>Lessons - ${lesson.level_no}</button>
+    <button
+        onclick="levelWordLoadData(${lesson.level_no})"
+        class="btn btn-outline btn-primary"
+      >
+        <i class="fa-solid fa-book-open"></i>Lessons - ${lesson.level_no}
+      </button>
     `
-    console.log(createDivElement);
+    // console.log(createDivElement);
 
     //^5
     getLevelContainer.appendChild(createDivElement)
   });
 }
-//displayLessons()
+
+// those function are use for word
+const levelWordLoadData = (id) => {
+  console.log(id);
+
+  const url = `https://openapi.programming-hero.com/api/level/${id}`
+  console.log(url);
+
+  fetch(url)
+    .then(res => res.json())
+    .then(data => displayLevelWord(data.data))
+}
+
+const displayLevelWord = (words) => {
+  // console.log(words);
+
+  const getWordContainer = document.getElementById('wordContainer')
+  // console.log(getWordContainer);
+  getWordContainer.innerHTML = ''
+
+  words.forEach(word => {
+    console.log(word);
+
+    const createWordCard = document.createElement('div')
+    // console.log(createWordCard);
+    createWordCard.innerHTML = `
+        <div class="bg-white rounded-xl text-center py-10 px-5">
+          <h2 class="text-2xl font-bold">${word.word}</h2>
+          <p class="font-semibold mt-2">Meaning /Pronounciation</p>
+          <div class="fontBangla text-2xl text-gray-500 font-medium mt-5">
+            "${word.meaning} / ${word.pronunciation}"
+          </div>
+
+          <div class="flex justify-between items-center">
+            <button class="btn bg-[#1a91ff30] hover:bg-[#1a91ff80]">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+            <button class="btn bg-[#1a91ff30] hover:bg-[#1a91ff80]">
+              <i class="fa-solid fa-volume-high"></i>
+            </button>
+          </div>
+        </div>
+    `
+    getWordContainer.appendChild(createWordCard)
+  });
+}
