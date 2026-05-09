@@ -1,4 +1,4 @@
-console.log('window🪟 file loaded...');
+console.log("window🪟 file loaded...");
 
 /**
  *^ all external links or resources here
@@ -31,10 +31,9 @@ console.log('window🪟 file loaded...');
  */
 
 const lessonLoadData = () => {
-  fetch('https://openapi.programming-hero.com/api/levels/all') //return promise of response
-    .then(response => response.json()) //return promise of json data
-    .then(data => {
-
+  fetch("https://openapi.programming-hero.com/api/levels/all") //return promise of response
+    .then((response) => response.json()) //return promise of json data
+    .then((data) => {
       //*for result checking
       // console.log(data) //* for fetched data by fetch()
       // console.log(data.status) //* for status check
@@ -42,11 +41,10 @@ const lessonLoadData = () => {
       // console.log(data.data) //* for array of object check
 
       //* for result checking
-      displayLessons(data.data)
-    })
-}
-lessonLoadData()
-
+      displayLessons(data.data);
+    });
+};
+lessonLoadData();
 
 /**
  * 1. get parent container to append card or data, then empty the container
@@ -60,16 +58,16 @@ const displayLessons = (lessons) => {
   // console.log(lessons);
 
   //^1
-  const getLevelContainer = document.getElementById('levelContainer')
+  const getLevelContainer = document.getElementById("levelContainer");
   //console.log(getLevelContainer);
-  getLevelContainer.innerHTML = ''
+  getLevelContainer.innerHTML = "";
 
   //^2
-  lessons.forEach(lesson => {
+  lessons.forEach((lesson) => {
     //console.log(lesson);
 
     //^3
-    const createDivElement = document.createElement('div')
+    const createDivElement = document.createElement("div");
     //console.log(createDivElement);
 
     //^4
@@ -81,42 +79,43 @@ const displayLessons = (lessons) => {
       >
         <i class="fa-solid fa-book-open"></i>Lessons - ${lesson.level_no}
       </button>
-    `
+    `;
     // console.log(createDivElement);
 
     //^5
-    getLevelContainer.appendChild(createDivElement)
+    getLevelContainer.appendChild(createDivElement);
   });
-}
+};
 
 // those function are use for word
 const levelWordLoadData = (id) => {
   // console.log(id);
 
-  const url = `https://openapi.programming-hero.com/api/level/${id}`
+  loadingManager(true);
+
+  const url = `https://openapi.programming-hero.com/api/level/${id}`;
   // console.log(url);
 
   fetch(url)
-    .then(res => res.json())
-    .then(data => {
-
+    .then((res) => res.json())
+    .then((data) => {
       //* for button active class remove
-      removeActive()
+      removeActive();
 
-      const levelBtn = document.getElementById(`lessonBtnId-${id}`)
+      const levelBtn = document.getElementById(`lessonBtnId-${id}`);
       // console.log(levelBtn);
-      levelBtn.classList.add('btn-active')
+      levelBtn.classList.add("btn-active");
 
-      displayLevelWord(data.data)
-    })
-}
+      displayLevelWord(data.data);
+    });
+};
 
 const displayLevelWord = (words) => {
   // console.log(words);
 
-  const getWordContainer = document.getElementById('wordContainer')
+  const getWordContainer = document.getElementById("wordContainer");
   // console.log(getWordContainer);
-  getWordContainer.innerHTML = ''
+  getWordContainer.innerHTML = "";
 
   //^ special part
   if (words.length == 0) {
@@ -132,25 +131,27 @@ const displayLevelWord = (words) => {
             নেক্সট Lesson এ যান...
           </h1>
         </div>
-    `
-    return
+    `;
+
+    loadingManager(false);
+    return;
   }
 
-  words.forEach(word => {
+  words.forEach((word) => {
     // console.log(word);
 
-    const createWordCard = document.createElement('div')
+    const createWordCard = document.createElement("div");
     // console.log(createWordCard);
     createWordCard.innerHTML = `
         <div class="bg-white rounded-xl text-center py-10 px-5">
-          <h2 class="text-2xl font-bold">${word.word ? word.word : 'Not Found'}</h2>
+          <h2 class="text-2xl font-bold">${word.word ? word.word : "Not Found"}</h2>
           <p class="font-semibold mt-2">Meaning /Pronounciation</p>
           <div class="fontBangla text-2xl text-gray-500 font-medium mt-5">
-            "${word.meaning ? word.meaning : 'Not Found'} / ${word.pronunciation ? word.pronunciation : 'Not Found'}"
+            "${word.meaning ? word.meaning : "Not Found"} / ${word.pronunciation ? word.pronunciation : "Not Found"}"
           </div>
 
           <div class="flex justify-between items-center">
-            <button onclick="my_modal_5.showModal()" class="btn bg-[#1a91ff30] hover:bg-[#1a91ff80]">
+            <button onclick="loadWordDetails(${word.id})" class="btn bg-[#1a91ff30] hover:bg-[#1a91ff80]">
               <i class="fa-solid fa-circle-info"></i>
             </button>
             <button class="btn bg-[#1a91ff30] hover:bg-[#1a91ff80]">
@@ -158,18 +159,92 @@ const displayLevelWord = (words) => {
             </button>
           </div>
         </div>
-    `
-    getWordContainer.appendChild(createWordCard)
+    `;
+    getWordContainer.appendChild(createWordCard);
   });
-}
 
+  loadingManager(false);
+};
 
 // for buttons active and inactive
 const removeActive = () => {
-  const levelBtnClass = document.querySelectorAll('.lessonBtnClass')
+  const levelBtnClass = document.querySelectorAll(".lessonBtnClass");
   // console.log(levelBtnClass);
 
   for (const btn of levelBtnClass) {
-    btn.classList.remove('btn-active')
+    btn.classList.remove("btn-active");
   }
-}
+};
+
+const loadWordDetails = async (wordDetailsId) => {
+  // console.log(wordDetailsId);
+
+  const url = `https://openapi.programming-hero.com/api/word/${wordDetailsId}`;
+
+  const response = await fetch(url);
+
+  const jsonData = await response.json();
+  displayWordDetails(jsonData.data);
+
+  // fetch(url)
+  //   .then((res) => res.json())
+  //   .then((jsonData) => my_modal_5.showModal(jsonData.data));
+};
+
+const displayWordDetails = (wordDetails) => {
+  console.log(wordDetails);
+
+  const getWordDetailsContainer = document.getElementById(
+    "WordDetailsContainer",
+  );
+  console.log(getWordDetailsContainer);
+
+  getWordDetailsContainer.innerHTML = `
+  <div class="space-y-5">
+            <div class="">
+              <h2 class="text-2xl font-bold">
+                ${wordDetails.word} (<i class="fa-solid fa-microphone-lines"></i> : ${wordDetails.pronunciation})
+              </h2>
+            </div>
+
+            <div class="">
+              <h2 class="font-bold">Meaning</h2>
+              <p class="fontBangla">"${wordDetails.meaning}"</p>
+            </div>
+
+            <div class="">
+              <h2 class="font-bold">Example</h2>
+              <p>${wordDetails.sentence}</p>
+            </div>
+
+            <div class="">
+              <h2 class="font-bold">Synonym</h2>
+
+              <div class="">${createSynonymElement(wordDetails.synonyms)}</div>  
+            </div>
+          </div>
+  `;
+
+  document.getElementById("wordModal").showModal(wordDetails.data);
+};
+
+const createSynonymElement = (synonymsArray) => {
+  // console.log(synonymsArray);
+
+  const synonymsElement = synonymsArray.map(
+    (element) => `<span class="btn">${element}</span>`,
+  );
+  // console.log(synonymsElement);
+
+  return synonymsElement.join(" ");
+};
+
+const loadingManager = (status) => {
+  if (status == true) {
+    document.getElementById("loadingContainer").classList.remove("hidden");
+    document.getElementById("wordContainer").classList.add("hidden");
+  } else {
+    document.getElementById("wordContainer").classList.remove("hidden");
+    document.getElementById("loadingContainer").classList.add("hidden");
+  }
+};
