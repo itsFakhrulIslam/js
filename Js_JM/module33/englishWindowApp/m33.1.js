@@ -44,7 +44,6 @@ const lessonLoadData = () => {
       displayLessons(data.data);
     });
 };
-lessonLoadData();
 
 /**
  * 1. get parent container to append card or data, then empty the container
@@ -248,3 +247,28 @@ const loadingManager = (status) => {
     document.getElementById("loadingContainer").classList.add("hidden");
   }
 };
+
+lessonLoadData();
+
+document.getElementById('searchBtn').addEventListener('click', function () {
+  // console.log('clicked');
+
+  removeActive()
+
+  const inputValue = document.getElementById('searchInput').value
+  const convertValue = inputValue.trim().toLowerCase()
+  console.log(inputValue);
+  console.log(convertValue);
+
+  fetch('https://openapi.programming-hero.com/api/words/all')
+    .then(res => res.json())
+    .then(jsonData => {
+
+      const allWords = jsonData.data
+      // console.log(allWords);
+
+      const filterWords = allWords.filter(word => word.word.toLowerCase().includes(convertValue))
+
+      displayLevelWord(filterWords);
+    })
+})
