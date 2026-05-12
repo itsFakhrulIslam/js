@@ -1,4 +1,4 @@
-// topic of the es6
+// ^topic of the es6
 /**
  * 1. template string (``)
  * 2. arrow function ( ()=>{} )
