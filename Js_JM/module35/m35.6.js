@@ -28,9 +28,37 @@
 const TrueFalseValueCheck = ''
 
 if (TrueFalseValueCheck) {
-    console.log('its truthy');
+    // console.log('its truthy');
 } else {
-    console.log('its falsy');
+    // console.log('its falsy');
 }
 
-TrueFalseValueCheck ? console.log('its truthy') : console.log('its falsy')
+// TrueFalseValueChepck ? console.log('its truthy') : console.log('its falsy')
+
+//^ 
+let age = 33
+
+const result = (age >= 18 && age < 30) ? 'your are eligible' : 'you are not eligible'
+// console.log(result);
+
+
+// ^
+const isActive = true
+// console.log(!isActive);
+
+const showUser = () => {
+    console.log('green');
+}
+
+const hideUser = () => {
+    console.log('grey');
+}
+
+// 
+// isActive ? showUser() : hideUser()
+
+// 
+// isActive && showUser()
+
+// 
+// isActive || hideUser()
