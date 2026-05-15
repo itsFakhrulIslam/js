@@ -9,3 +9,6 @@ console.log("weakupSleepInTheMorning everyday: ", weakupSleepInTheMorning);
 
 let distructToThePhone = 4;
 console.log("distructToThePhone more than: ", distructToThePhone, "hours");
+
+let dueMoneyToMe = 1020;
+console.log("dueMoneyToMe: ", dueMoneyToMe);
