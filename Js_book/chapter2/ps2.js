@@ -12,3 +12,7 @@ console.log("distructToThePhone more than: ", distructToThePhone, "hours");
 
 let dueMoneyToMe = 1020;
 console.log("dueMoneyToMe: ", dueMoneyToMe);
+
+let goals = 7;
+console.log("goals: ", goals, "up");
+
