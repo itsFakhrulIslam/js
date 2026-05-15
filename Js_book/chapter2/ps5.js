@@ -51,3 +51,8 @@ let regularEat = 4;
 let totalCal = 480;
 let durationDay = totalCal / regularEat;
 console.log(durationDay);
+
+
+let months = regularEat * 30
+let durationMonth = totalCal / months
+console.log(durationMonth);
