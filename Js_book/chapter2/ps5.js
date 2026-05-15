@@ -46,3 +46,8 @@ let countryF = "bangla";
 let countryL = "desh";
 let fullCountry = countryF + countryL;
 console.log(fullCountry);
+
+let regularEat = 4;
+let totalCal = 480;
+let durationDay = totalCal / regularEat;
+console.log(durationDay);
