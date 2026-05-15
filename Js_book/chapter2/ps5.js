@@ -23,9 +23,16 @@ let dal = 261;
 let totalKg = cal + dal;
 console.log(totalKg);
 
-let hasMoney1 = 500
-let useMoney1 = 75
-let usedMoney1 = hasMoney1 / useMoney1
-let usedMoneyExtra = hasMoney1 % useMoney1
+let hasMoney1 = 500;
+let useMoney1 = 75;
+let usedMoney1 = hasMoney1 / useMoney1;
+let usedMoneyExtra = hasMoney1 % useMoney1;
 console.log(usedMoney1);
 console.log(usedMoneyExtra);
+
+let num = 8;
+let num1 = 3;
+let vaghFol = num / num1;
+let vaghSesh = num % num1;
+console.log(vaghFol);
+console.log(vaghSesh);
