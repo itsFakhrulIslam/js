@@ -36,3 +36,9 @@ let vaghFol = num / num1;
 let vaghSesh = num % num1;
 console.log(vaghFol);
 console.log(vaghSesh);
+
+let num2 = 50;
+let num3 = 9;
+let vaghSesh1 = num2 % num3;
+console.log(vaghSesh1);
+
