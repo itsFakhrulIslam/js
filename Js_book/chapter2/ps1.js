@@ -9,3 +9,6 @@ console.log("studentInMyClass: ", studentInMyClass);
 
 let lastExamResult = "First Class First Division";
 console.log("lastExamResult: ", lastExamResult);
+
+let roomsInMyHouse = '5 Rooms'
+console.log('roomsInMyHouse: ', roomsInMyHouse);
