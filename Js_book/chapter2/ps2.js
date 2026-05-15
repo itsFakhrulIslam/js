@@ -7,3 +7,5 @@ console.log("bookStudy: ", bookStudy);
 let weakupSleepInTheMorning = "6am";
 console.log("weakupSleepInTheMorning everyday: ", weakupSleepInTheMorning);
 
+let distructToThePhone = 4;
+console.log("distructToThePhone more than: ", distructToThePhone, "hours");
