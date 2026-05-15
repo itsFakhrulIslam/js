@@ -12,3 +12,6 @@ console.log(isHungry);
 
 let hasMoney = false
 console.log(hasMoney);
+
+let isHappy = true
+console.log(isHappy);
