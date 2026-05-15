@@ -9,3 +9,6 @@ console.log("my madrashaName is: ", madrashaName);
 
 let fan = "greatest is mohammad sm.";
 console.log("Im fan: ", fan);
+
+let loveOftheYear = "2025";
+console.log("My loveOftheYear is :", loveOftheYear);
