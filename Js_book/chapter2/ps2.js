@@ -16,3 +16,5 @@ console.log("dueMoneyToMe: ", dueMoneyToMe);
 let goals = 7;
 console.log("goals: ", goals, "up");
 
+let pillow = 3;
+console.log("i have pillow: ", pillow);
