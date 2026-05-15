@@ -15,3 +15,6 @@ console.log("roomsInMyHouse: ", roomsInMyHouse);
 
 let regularStudyInHourse = "3 to 4";
 console.log("regularStudyInHourse more than :", regularStudyInHourse);
+
+let phoneNumber = "1234567890";
+console.log("phoneNumber: ", phoneNumber);
