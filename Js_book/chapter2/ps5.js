@@ -12,3 +12,8 @@ let hasMoney = 60;
 let useMoney = 15;
 let usedMoney = hasMoney - useMoney;
 console.log(usedMoney);
+
+let say1 = "hello ";
+let say2 = "world";
+let greet = say1 + say2;
+console.log(greet);
