@@ -17,3 +17,8 @@ let say1 = "hello ";
 let say2 = "world";
 let greet = say1 + say2;
 console.log(greet);
+
+let cal = 153;
+let dal = 261;
+let totalKg = cal + dal;
+console.log(totalKg);
