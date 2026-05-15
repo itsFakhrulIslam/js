@@ -9,3 +9,6 @@ console.log(celebrating);
 
 let isHungry = true
 console.log(isHungry);
+
+let hasMoney = false
+console.log(hasMoney);
