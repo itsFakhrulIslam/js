@@ -7,3 +7,8 @@ let havePencil = 10;
 let use = 2;
 let used = havePencil / use;
 console.log(used);
+
+let hasMoney = 60;
+let useMoney = 15;
+let usedMoney = hasMoney - useMoney;
+console.log(usedMoney);
