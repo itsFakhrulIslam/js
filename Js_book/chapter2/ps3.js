@@ -12,3 +12,6 @@ console.log("Im fan: ", fan);
 
 let loveOftheYear = "2025";
 console.log("My loveOftheYear is :", loveOftheYear);
+
+let favColor = "white";
+console.log("my favColor is: ", favColor);
