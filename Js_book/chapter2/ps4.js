@@ -1,20 +1,23 @@
-let myFriendisHappy = false
+let myFriendisHappy = false;
 console.log(myFriendisHappy);
 
-let callMeMyWife = true
-console.log(callMeMyWife)
+let callMeMyWife = true;
+console.log(callMeMyWife);
 
-let celebrating = false
+let celebrating = false;
 console.log(celebrating);
 
-let isHungry = true
+let isHungry = true;
 console.log(isHungry);
 
-let hasMoney = false
+let hasMoney = false;
 console.log(hasMoney);
 
-let isHappy = true
+let isHappy = true;
 console.log(isHappy);
 
-let isFemale = false
+let isFemale = false;
 console.log(isFemale);
+
+let isPhoneCharged = false;
+console.log(isPhoneCharged);
