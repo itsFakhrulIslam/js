@@ -21,3 +21,6 @@ console.log(isFemale);
 
 let isPhoneCharged = false;
 console.log(isPhoneCharged);
+
+let isBreakfastDone = false
+console.log(isBreakfastDone);
