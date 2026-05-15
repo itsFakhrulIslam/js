@@ -1,8 +1,11 @@
 let myBirthYear = 2004;
-console.log("myBirthYear", myBirthYear);
+console.log("myBirthYear: ", myBirthYear);
 
 let siblings = 5;
-console.log("siblings", siblings);
+console.log("siblings: ", siblings);
 
 let studentInMyClass = 145;
-console.log("studentInMyClass", studentInMyClass);
+console.log("studentInMyClass: ", studentInMyClass);
+
+let lastExamResult = "First Class First Division";
+console.log("lastExamResult: ", lastExamResult);
