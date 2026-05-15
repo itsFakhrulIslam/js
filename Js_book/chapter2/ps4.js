@@ -6,3 +6,6 @@ console.log(callMeMyWife)
 
 let celebrating = false
 console.log(celebrating);
+
+let isHungry = true
+console.log(isHungry);
