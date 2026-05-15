@@ -42,3 +42,7 @@ let num3 = 9;
 let vaghSesh1 = num2 % num3;
 console.log(vaghSesh1);
 
+let countryF = "bangla";
+let countryL = "desh";
+let fullCountry = countryF + countryL;
+console.log(fullCountry);
