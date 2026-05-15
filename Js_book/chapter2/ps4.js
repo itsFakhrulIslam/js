@@ -15,3 +15,6 @@ console.log(hasMoney);
 
 let isHappy = true
 console.log(isHappy);
+
+let isFemale = false
+console.log(isFemale);
