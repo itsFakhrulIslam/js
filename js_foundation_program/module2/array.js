@@ -8,6 +8,7 @@
  *      unshift()
  *      shift()
  *      splice()
+ *      slice()
  */
 let nameLists = ["miraj", "siraj", "riyaj", "rinam"];
 console.log(nameLists);
@@ -34,3 +35,7 @@ console.log(nameLists);
 // nameLists.splice(2, 2, "brother");
 nameLists.splice(2, 0, "brother");
 console.log(nameLists);
+
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const myFavFruit = fruits.slice(1, 3);
+console.log(myFavFruit); // Output: ["Orange", "Lemon"]
