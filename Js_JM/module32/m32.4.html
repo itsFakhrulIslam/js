@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>load Data</title>
+  </head>
+  <body>
+    <div class="">
+      <button onclick="loadBtn()">Load Data</button>
+      <br />
+      <button onclick="loadPosts()">Load Posts</button>
+
+      <ul id="postsContainer"></ul>
+    </div>
+
+    <!-- script here -->
+    <script>
+      // load data todos
+
+      // way1
+      //   const loadBtn = document.getElementById("loadBtn");
+      //   loadBtn.addEventListener("click", () => {
+      //     fetchData = fetch("https://jsonplaceholder.typicode.com/todos/1")
+      //       .then((response) => response.json())
+      //       .then((json) => console.log(json));
+      //   });
+      //   console.log(loadBtn);
+
+      // way2
+      // document.getElementById("loadBtn").addEventListener("click", () => {
+      //   fetchData = fetch("https://jsonplaceholder.typicode.com/todos/1")
+      //     .then((response) => response.json())
+      //     .then((data) => console.log(data));
+      // });
+
+      // way3
+      // const loadBtn = () => {
+      //   fetchData = fetch("https://jsonplaceholder.typicode.com/todos/1")
+      //     .then((response) => response.json())
+      //     .then((data) => console.log(data));
+      // };
+
+      // load data posts
+      const loadPosts = () => {
+        const fetchUrl = "https://jsonplaceholder.typicode.com/posts";
+
+        fetch(fetchUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log(data);
+            displayPost(data);
+          });
+      };
+
+      const displayPost = (posts) => {
+        // console.log(posts);
+
+        //1 get list container
+        const listContainer = document.getElementById("postsContainer");
+        console.log(listContainer);
+
+        // way1 loop
+        posts.forEach((post) => {
+          //2 create list items
+          const listItem = document.createElement("li");
+          listItem.innerText = post.id + post.title;
+
+          //3 add to list container
+          listContainer.appendChild(listItem);
+
+          // console.log(post);
+        });
+
+        // way2 loop
+        // for (const post of posts) {
+        //   console.log(post);
+        // }
+
+        // way3 loop
+        // for (let i = 0; i < posts.length; i++) {
+        //   const element = posts[i];
+        //   console.log(element);
+        // }
+
+        // way4 loop
+        // let i = 0;
+        // while (i < posts.length) {
+        //   console.log(posts[i].);
+        //   i++;
+        // }
+      };
+    </script>
+  </body>
+</html>

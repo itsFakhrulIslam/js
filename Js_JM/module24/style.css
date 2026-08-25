@@ -1,0 +1,30 @@
+h1,h3 {
+  color: rebeccapurple;
+  text-align: center;
+}
+ul {
+  text-align: center;
+  list-style: none;
+}
+/* এই ক্লাসটি যখন HTML-এ থাকবে, তখন টেক্সট লাল হবে */
+.red-text {
+  color: red;
+}
+
+/* own practice toggler */
+h3{
+    font-size: 5rem;
+}
+#btnId{
+    margin-left: 40%;
+    margin-bottom: 20%;
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    &:hover{
+        background: transparent;
+        color: black;
+    }
+}

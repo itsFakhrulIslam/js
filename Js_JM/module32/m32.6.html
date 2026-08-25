@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts show</title>
+    <style>
+      #postContainer {
+        min-width: 1160px;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+      }
+      .postCard{
+        border: 2px solid #ddd;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 3px 3px 10px skyblue;
+        height: 80%;
+
+        & p{
+            text-align: justify;
+            line-height: 85%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="fetchAllPosts()">Load All Posts</button>
+
+    <!-- post section -->
+     <h1>All Posts</h1>
+    <div id="postContainer"></div>
+
+    <!-- scripts here -->
+    <script src="./m32.6.js"></script>
+  </body>
+</html>

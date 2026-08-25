@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo projects</title>
+    <style>
+      #todosContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 10px;
+        column-gap: 20px;
+      }
+      .todoCard {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        padding: 20px;
+        box-shadow: 3px 3px 5px grey;
+        height: 65%;
+
+        & p {
+          text-align: justify;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>All Todos</h1>
+    <div id="todosContainer"></div>
+
+    <!-- script here -->
+    <script src="m32.7.js"></script>
+  </body>
+</html>

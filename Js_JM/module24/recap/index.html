@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recap DOM</title>
+  </head>
+  <body>
+    <!-- this is Emmet/shortly write code and for coding more faster. 
+      main>section.section-item*3>h1{section title - $}+ul>li*4{item-$} -->
+    <main>
+      <section class="section-item">
+        <h1>section title - 1</h1>
+        <ul>
+          <li>item-1</li>
+          <li>item-2</li>
+          <li>item-3</li>
+          <li>item-4</li>
+        </ul>
+      </section>
+      <section class="section-item">
+        <h1>section title - 2</h1>
+        <ul>
+          <li>item-1</li>
+          <li>item-2</li>
+          <li>item-3</li>
+          <li>item-4</li>
+        </ul>
+      </section>
+      <section class="section-item">
+        <h1>section title - 3</h1>
+        <ul>
+          <li>item-1</li>
+          <li>item-2</li>
+          <li>item-3</li>
+          <li>item-4</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- another emmet example:  
+    section#services.container>h2{Our Services}+div.card-wrapper>(div.card>img[src="logo.png"]+h3{Service $})*3
+     -->
+    <section id="services" class="container">
+      <h2>Our Services</h2>
+      <div class="card-wrapper">
+        <div class="card">
+          <img src="logo.png" alt="" />
+          <h3>Service 1</h3>
+        </div>
+        <div class="card">
+          <img src="logo.png" alt="" />
+          <h3>Service 2</h3>
+        </div>
+        <div class="card">
+          <img src="logo.png" alt="" />
+          <h3>Service 3</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- script here -->
+    <script src="fisrt.js"></script>
+    <script src="second.js"></script>
+    <script src="third.js"></script>
+  </body>
+</html>
