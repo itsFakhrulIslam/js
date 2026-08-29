@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+      }
+
+      .app {
+        background: #fff;
+        width: 400px;
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .input-row {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      #taskInput {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      #addBtn {
+        padding: 10px 16px;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      #addBtn:hover {
+        background-color: #43a047;
+      }
+
+      #taskList {
+        list-style: none;
+      }
+
+      .task-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .task-text {
+        flex: 1;
+        margin: 0 10px;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        color: #999;
+      }
+
+      .task-buttons button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 14px;
+        margin-left: 6px;
+      }
+
+      .empty-state {
+        text-align: center;
+        color: #999;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <h1>My Todo App</h1>
+ 
+      <div class="input-row">
+        <input type="text" id="taskInput" placeholder="Enter a task..." />
+        <button id="addBtn">Add</button>
+      </div>
+
+      <ul id="taskList">
+        <li>hello mis <button>✅</button> <button>❌</button> </li>
+      </ul>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="todo.js"></script>
+  </body>
+</html>
