@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let btn = document.createElement("button");
+      btn.textContent = "click me";
+      btn.style.backgroundColor = "blue";
+      btn.style.color = "white";
+      btn.style.fontWeight = "bold";
+      btn.style.fontSize = "20px";
+      btn.style.textTransform = "uppercase";
+
+      // Extra padding & border styling (optional - দেখতে সুন্দর লাগার জন্য)
+      btn.style.padding = "10px 20px";
+      btn.style.border = "none";
+      btn.style.borderRadius = "5px";
+      btn.style.cursor = "pointer";
+      document.body.appendChild(btn);
+
+      //   state changed
+      btn.addEventListener('click', ()=>{
+        btn.style.backgroundColor = 'red'
+        btn.textContent = 'clicked'
+      })
+    </script>
+  </body>
+</html>
