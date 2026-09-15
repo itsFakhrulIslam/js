@@ -1,12 +1,12 @@
 export default function Card({ name, quantity, rating }) {
-  const greetingsHandler = (getName) => {
-    console.log(`Hello ${getName}`);
+  const greetingsHandler = (getName, stock) => {
+    alert(`Hello ${getName}, available stock: ${stock}`);
   };
 
   return (
     <>
       <div
-        onClick={() => greetingsHandler(name)}
+        onClick={() => greetingsHandler(name, quantity)}
         className=""
         style={{
           backgroundColor: "gray",
