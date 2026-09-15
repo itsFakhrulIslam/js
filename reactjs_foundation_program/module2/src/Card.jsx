@@ -1,10 +1,19 @@
 export default function Card({ name, quantity, rating }) {
+  const greetingsHandler = (getName) => {
+    console.log(`Hello ${getName}`);
+  };
 
   return (
     <>
       <div
+        onClick={() => greetingsHandler(name)}
         className=""
-        style={{backgroundColor:'gray', border: "2px solid", margin: "10px", padding: "20px" }}
+        style={{
+          backgroundColor: "gray",
+          border: "2px solid",
+          margin: "10px",
+          padding: "20px",
+        }}
       >
         <h3>title: {name}</h3>
         <p>stock: {quantity}</p>

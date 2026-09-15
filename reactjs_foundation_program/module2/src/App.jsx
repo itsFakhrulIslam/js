@@ -17,8 +17,9 @@ function App() {
       {cardData
         // .filter((singleCard) => singleCard.quantity < 100)
         .sort((a, b) => b.rating - a.rating)
-        .map((singleCard) => (
+        .map((singleCard, i) => (
           <Card
+            key={i}
             name={singleCard.name}
             quantity={singleCard.quantity}
             rating={singleCard.rating}
