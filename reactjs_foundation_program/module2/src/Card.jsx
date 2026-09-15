@@ -1,15 +1,15 @@
-export default function Card({ cardData }) {
-  console.log(cardData);
+export default function Card({ name, quantity, rating }) {
 
   return (
     <>
-      {cardData.map((card, i) => (
-        <div className="" style={{border:'2px solid', margin:'10px', padding:'20px'}} key={i}>
-          <h3>title: {card.name}</h3>
-          <p>stock: {card.quantity}</p>
-          <span>review: {card.rating}</span>
-        </div>
-      ))}
+      <div
+        className=""
+        style={{backgroundColor:'gray', border: "2px solid", margin: "10px", padding: "20px" }}
+      >
+        <h3>title: {name}</h3>
+        <p>stock: {quantity}</p>
+        <span>review: {rating}</span>
+      </div>
     </>
   );
 }

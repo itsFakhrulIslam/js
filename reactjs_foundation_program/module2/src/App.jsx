@@ -13,7 +13,17 @@ function App() {
     <>
       <h1>hello react world </h1>
       <TestComponents />
-      <Card cardData={cardData} />
+
+      {cardData
+        // .filter((singleCard) => singleCard.quantity < 100)
+        .sort((a, b) => b.rating - a.rating)
+        .map((singleCard) => (
+          <Card
+            name={singleCard.name}
+            quantity={singleCard.quantity}
+            rating={singleCard.rating}
+          />
+        ))}
     </>
   );
 }
