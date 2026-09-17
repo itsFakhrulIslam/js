@@ -8,8 +8,15 @@ const UseEffDataFetch = () => {
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
+      .then((res) => {
+        throw new Error("somethin went wrong by Miraj 🤣");
+
+        return res.json();
+      })
       .then((data) => setUsers(data))
+      .catch((err) => {
+        alert(err.message);
+      })
       .finally(() => {
         setIsLoading(false);
       });
