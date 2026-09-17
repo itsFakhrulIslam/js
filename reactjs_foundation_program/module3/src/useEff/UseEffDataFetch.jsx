@@ -3,29 +3,53 @@ import UsersCard from "../components/UsersCard";
 
 const UseEffDataFetch = () => {
   const [users, setUsers] = useState([]);
-  //   console.log(users);
+
   const [isLoading, setIsLoading] = useState(true);
 
   const [error, setError] = useState("");
 
+  //   older ways to define
+  //   useEffect(() => {
+  //     fetch("https://jsonplaceholder.typicode.com/users")
+  //       .then((res) => {
+  //         // throw new Error("somethin went wrong by Miraj 🤣");
+
+  //         if (!res.ok) {
+  //           throw new Error(res.message || "somethin went wrong by Miraj 🤣");
+  //         }
+
+  //         return res.json();
+  //       })
+  //       .then((data) => setUsers(data))
+  //       .catch((err) => {
+  //         setError(err.message);
+  //       })
+  //       .finally(() => {
+  //         setIsLoading(false);
+  //       });
+  //   }, []);
+
+  //   modern ways to define
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => {
-        // throw new Error("somethin went wrong by Miraj 🤣");
+    const fetchUser = async () => {
+      try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users");
 
         if (!res.ok) {
           throw new Error(res.message || "somethin went wrong by Miraj 🤣");
         }
 
-        return res.json();
-      })
-      .then((data) => setUsers(data))
-      .catch((err) => {
-        setError(err.message);
-      })
-      .finally(() => {
+        const data = await res.json();
+
+        setUsers(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
         setIsLoading(false);
-      });
+      }
+    };
+
+    fetchUser();
   }, []);
 
   if (isLoading) {
