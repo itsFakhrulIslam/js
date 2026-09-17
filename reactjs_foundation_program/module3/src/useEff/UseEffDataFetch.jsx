@@ -6,16 +6,22 @@ const UseEffDataFetch = () => {
   //   console.log(users);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [error, setError] = useState("");
+
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
-        throw new Error("somethin went wrong by Miraj 🤣");
+        // throw new Error("somethin went wrong by Miraj 🤣");
+
+        if (!res.ok) {
+          throw new Error(res.message || "somethin went wrong by Miraj 🤣");
+        }
 
         return res.json();
       })
       .then((data) => setUsers(data))
       .catch((err) => {
-        alert(err.message);
+        setError(err.message);
       })
       .finally(() => {
         setIsLoading(false);
@@ -32,6 +38,20 @@ const UseEffDataFetch = () => {
         }}
       >
         User Loading...
+      </p>
+    );
+  }
+
+  if (error) {
+    return (
+      <p
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {error}
       </p>
     );
   }
